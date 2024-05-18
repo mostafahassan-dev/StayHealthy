@@ -19,7 +19,17 @@ function Sign_Up() {
                     </div>
                     <div className="form-group">
                         <label htmlFor="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required  className="form-control" placeholder="Enter your phone" aria-describedby="helpId"/>
+                        <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        required  
+                        className="form-control" 
+                        placeholder="Enter your phone" 
+                        aria-describedby="helpId"
+                        pattern="\d{10}" 
+                        title="Please enter a 10-digit phone number"
+                        />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
