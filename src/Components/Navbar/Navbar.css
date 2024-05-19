@@ -28,32 +28,37 @@ nav{
 .nav__links{    
     display: flex;
     align-items:center;
-    gap: 1rem;
+    gap: .5rem;
     font-size: 1rem;
-    font-size: 500;
+    font-weight: 500;
 }
-.link a {
-    padding: 0 .5rem;
+
+.link {
+    padding: 0 1rem;
     color: #0d213f;
-    transition: 0.3s;
-  }
+}
   
 .link a:hover {
     color: #3685fb;
 }
-
-.signup__btn,.login__btn {
-    padding: 5px 15px;
-    width: 110px;
+.nav__links p{
+    margin-left: 20px;
+}
+.nav__btn{
+    text-align: center;
+    padding: 3px ;
+    width: 120px;
     border-radius: 20px;
-    background-color: transparent;
     border: 2px solid #3685fb;
-    color: black;
     cursor: pointer;
+    font-weight: normal;
 }
 
-.signup__btn:hover,.login__btn:hover {
+.nav__btn:hover{
     background-color: #3685fb;
+    color: white;
+}
+.nav__btn:hover a{
     color: white;
 }
 
@@ -74,7 +79,7 @@ nav{
     .nav__links.active {
         display: flex;
         position: absolute;
-        top: 100%;
+        top: 100px;
         left: 0;
         width: 100%;
         margin: auto;
