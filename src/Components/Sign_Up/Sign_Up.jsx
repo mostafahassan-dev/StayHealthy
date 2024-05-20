@@ -39,10 +39,8 @@ function Sign_Up() {
             window.location.reload();
 
         } else {
-            if (json.errors) {
-                for (const error of json.errors) {
-                    setShowerr({ general: json.error });
-                }
+            if (typeof json.error === 'string') {
+                setShowerr({ general: json.error });
             } else {
                 const fieldErrors = {};
                     json.error.forEach(err => {
