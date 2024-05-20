@@ -10,6 +10,13 @@ function Sign_Up() {
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState({});
     
+    const handleReset = ()=>{
+        setName('')
+        setEmail('')
+        setPhone('')
+        setPassword('')
+        setShowerr('')
+    }
 
     const navigate = useNavigate();
 
@@ -125,7 +132,7 @@ function Sign_Up() {
                     </div>
                     <div className="btn-group">
                         <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
-                        <button type="reset" className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
+                        <button type="reset" className="btn btn-danger mb-2 waves-effect waves-light" onClick={handleReset}>Reset</button>
                     </div>
                     {showerr.general && (<small style={{ color: 'red' }}>{showerr.general}</small>)}
 
