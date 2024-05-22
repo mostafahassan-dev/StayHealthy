@@ -56,11 +56,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
             <button className={`book-appointment-btn ${appointments.length > 0 ? 'cancel-appointment' : ''}`}>
-              {appointments.length > 0 ? (
-                <div>Cancel Appointment</div>
-              ) : (
-                <div>Book Appointment</div>
-              )}
+              {appointments.length > 0 ? (<div>Cancel Appointment</div>) : (<div>Book Appointment</div>) }
               <div>No Booking Fee</div>
             </button>
           }
@@ -82,20 +78,19 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
                 </div>
               </div>
 
-              {appointments.length > 0 ? (
-                <>
-                  <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
-                  {appointments.map((appointment) => (
-                    <div className="bookedInfo" key={appointment.id}>
-                      <p>Name: {appointment.name}</p>
-                      <p>Phone Number: {appointment.phoneNumber}</p>
-                      <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
-                    </div>
-                  ))}
-                </>
-              ) : (
-                <AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
-              )}
+              {appointments.length > 0 ?
+                (
+                  <>
+                    <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
+                    {appointments.map((appointment) => (
+                      <div className="bookedInfo" key={appointment.id}>
+                        <p>Name: {appointment.name}</p>
+                        <p>Phone Number: {appointment.phoneNumber}</p>
+                        <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
+                      </div>
+                    ))}
+                  </>
+                ) : (<AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} /> )}
             </div>
           )}
         </Popup> 

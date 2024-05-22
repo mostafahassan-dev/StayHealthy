@@ -34,7 +34,7 @@ function FindDoctorSearch() {
                     <input 
                         type="text" 
                         className="search-doctor-input-box" 
-                        placeholder="Search doctors, clinics, hospitals, etc." 
+                        placeholder="Search doctor by speciality" 
                         onFocus={() => setDoctorResultHidden(false)} 
                         onBlur={() => setDoctorResultHidden(true)} 
                         value={searchDoctor} 
