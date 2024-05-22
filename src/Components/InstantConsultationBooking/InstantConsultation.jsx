@@ -73,9 +73,8 @@ const InstantConsultation = () => {
                     <p>No doctors found.</p>
                     )}
                 </center>
-                ) : (
-                ''
-                )}
+                ) : ( '' )
+            }
             </div>
         </div>
         </center>

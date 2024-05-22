@@ -47,7 +47,7 @@ const FindDoctorSearchIC = () => {
                                 {
                                     specialities.map(speciality =>
                                      <div className="search-doctor-result-item" key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}  >
-                                        <i className="fa fa-search"></i>
+                                        <span><i className="fa fa-search"></i></span>
                                         <span>{speciality}</span>
                                         <span>SPECIALITY</span>
                                     </div>)
