@@ -3,19 +3,15 @@ import React, { useState } from 'react'
 function AppointmentForm({onSubmit}) {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
-    const [selectedSlot, setSelectedSlot] = useState(null);
-    const [selectedDate, setSelectedDate] = useState(null);
-
-    const handleSlotSelection = (slot) => {
-        setSelectedSlot(slot);
-    };
+    const [selectedSlot, setSelectedSlot] = useState('');
+    const [selectedDate, setSelectedDate] = useState('');
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         onSubmit({ name, phone, selectedSlot,selectedDate }); //props
         setName('');
         setPhone('');
-        setSelectedSlot(null);
+        setSelectedSlot('');
     }
 
   return (
