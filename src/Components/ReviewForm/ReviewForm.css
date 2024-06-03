@@ -31,8 +31,9 @@
     border-bottom: 1px solid #ddd;
 }
 
-.doctor-review p {
-    margin: 0;
+.doctor-review p:last-of-type {
+    color: #c5c5c5;
+    font-style: italic;
 }
 
 .doctor-review .review-btn {
@@ -40,6 +41,7 @@
     padding: 5px 0px;
     text-align: center;
     min-width: 150px;
+    margin-right:50px ;
     background-color: #007bff;
     color: white;
     border-radius: 4px;
@@ -48,4 +50,19 @@
 
 .doctor-review .review-btn:hover {
     background-color: #0056b3;
+}
+
+.review-btn.disable-btn, .review-btn.disable-btn:hover {
+    background-color: #c5c5c5;
+    cursor: not-allowed ;
+}
+
+.star {
+    cursor: pointer;
+    transition: opacity 0.2s;
+    opacity: .3;
+}
+
+.star.selected {
+    opacity: 1;
 }
