@@ -16,7 +16,7 @@ function Navbar() {
         sessionStorage.removeItem("name")
         sessionStorage.removeItem("phone")
         sessionStorage.removeItem("email")
-        localStorage.removeItem("doctorData")
+        localStorage.removeItem("bookedData")
         
         // Remove the reviewFormData from local storage
         for (let i = 0; i < localStorage.length; i++) {
@@ -36,16 +36,20 @@ function Navbar() {
 
     useEffect(() => {
         const storedemail = sessionStorage.getItem("email")
-        if (storedemail) {
+        const storedname = sessionStorage.getItem("name")
+        if (storedemail && storedname) {
             setIsloggedIn(true)
+            setUserName(storedname)
+        }else if(storedemail){
+            setIsloggedIn(true)   
             const getUserName = ()=>{
                 const atIndex = storedemail.indexOf("@")
                 setUserName(storedemail.slice(0,atIndex))
-            }
-            getUserName()
+            }  
+            getUserName()       
         }
     }, [])
-
+    
   return (
     
     <nav>
@@ -67,14 +71,25 @@ function Navbar() {
             <i className={click ? "fa fa-times" :"fa fa-bars"}></i>
         </div>
         <ul className={click ?"nav__links active":"nav__links"}>
-            <li className="link"><Link to="/">Home</Link></li>
-            <li className="link"><Link to="/search/doctors">Appointments</Link></li>
-            <li className="link"><Link to="/healthblog">Health Blog</Link></li>
-            <li className="link"><Link to="/reviews">Reviews</Link></li>
+            <li className="link" onClick={handleClick}><Link to="/">Home</Link></li>
+            <li className="link" onClick={handleClick}><Link to="/search/doctors">Appointments</Link></li>
+            <li className="link" onClick={handleClick}><Link to="/healthblog">Health Blog</Link></li>
+            <li className="link" onClick={handleClick}><Link to="/reviews">Reviews</Link></li>
             
             { isloggedIn ?(
                 <>
-                    <p>Welcome, {username}</p>
+                    <li className={showDropdown ? 'dropdown show':'dropdown'}  onClick={handleDropdown}>Welcome, {username}
+                        {
+                            showDropdown && (
+                                <ul className='dropdown-menu'>
+                                    <li className='dropdown-item'>
+                                        <Link to="/profile" onClick={handleClick}>Your Profile</Link>
+                                    </li>
+                                    
+                                </ul>
+                            )
+                        }
+                    </li>
                     <li className="nav__btn"onClick={handleLogout}>Logout</li>
                 </>
             ) :(
