@@ -16,7 +16,6 @@ function GiveReviews({onSubmit}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(formData);
-        console.log('Form submitted:', formData);
         setFormData({ name: '', review: '', rating: 0 });
     };
 

@@ -9,6 +9,7 @@ function Navbar() {
     const [ username, setUserName ] = useState("")
     const [ showDropdown, setShowDropdown ] = useState(false)
     
+    
     const handleClick = () => setClick(!click)
 
     const handleLogout = () => {
@@ -84,6 +85,9 @@ function Navbar() {
                                 <ul className='dropdown-menu'>
                                     <li className='dropdown-item'>
                                         <Link to="/profile" onClick={handleClick}>Your Profile</Link>
+                                    </li>
+                                    <li className='dropdown-item'>
+                                        <Link to="/reports" onClick={handleClick}>Yout Reports</Link>
                                     </li>
                                     
                                 </ul>
