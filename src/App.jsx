@@ -13,6 +13,7 @@ import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import ProfileCard from './Components/ProfileCard/ProfileCard';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
+import HealthBlog from './Components/HealthBlog/HealthBlog';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/signup" element={<Sign_Up/>}/>
               <Route path='/instant-consultation' element={<InstantConsultation/>}/>
               <Route path='/search/doctors' element={<BookingConsultation /> }/>
+              <Route path='/healthblog' element={<HealthBlog /> }/> 
               <Route path='/reviews' element={<ReviewForm /> }/>
               <Route path='/profile' element={<ProfileCard /> }/>
               <Route path='/reports' element={<ReportsLayout /> }/>
